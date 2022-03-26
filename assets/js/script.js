@@ -38,7 +38,7 @@ var createTask = function(taskText, taskDate, taskList) {
       // replace text area with p element
       $(this).replaceWith(taskP);
 
-      task[status][index].text = text;
+      tasks[status][index].text = text;
       saveTasks();
     });
 
