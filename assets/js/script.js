@@ -9,38 +9,6 @@ var createTask = function(taskText, taskDate, taskList) {
   var taskP = $("<p>")
     .addClass("m-1")
     .text(taskText);
-    $(".list-group").on("blur", "textarea", function () {
-      
-      // get the textarea's current value/text
-      var text = $(this)
-        .val()
-        .trim();
-
-      // get the parent ul's id attribute
-      var status = $(this)
-        .closest(".list-group")
-        .attr("id")
-        .replace("list-group", "");
-
-      // get the task's position in the list of other li elements
-      var index = $(this)
-        .closest(".list-group-item")
-        .index();
-
-      // task[status][index].text = text;
-      // saveTasks();
-
-      // recreate p element
-      var taskP = $("<p>")
-        .addClass("m-1")
-        .text(text);
-
-      // replace text area with p element
-      $(this).replaceWith(taskP);
-
-      tasks[status][index].text = text;
-      saveTasks();
-    });
 
   // append span and p element to parent li
   taskLi.append(taskSpan, taskP);
@@ -78,17 +46,6 @@ var saveTasks = function() {
 };
 
 
-$(".list-group").on("click", "p", function() {
-  var text = $(this)
-  .text()
-  .trim();
-  
-  var textInput = $("<textarea>")
-  .addClass("form-control")
-  .val(text);
-  $(this).replaceWith(textInput);
-  textInput.trigger("focus");
-});
 
 
 // modal was triggered
