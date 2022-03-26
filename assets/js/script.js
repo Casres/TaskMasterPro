@@ -27,8 +27,8 @@ var createTask = function(taskText, taskDate, taskList) {
         .closest(".list-group-item")
         .index();
 
-      task[status][index].text = text;
-      saveTasks();
+      // task[status][index].text = text;
+      // saveTasks();
 
       // recreate p element
       var taskP = $("<p>")
@@ -37,6 +37,9 @@ var createTask = function(taskText, taskDate, taskList) {
 
       // replace text area with p element
       $(this).replaceWith(taskP);
+
+      task[status][index].text = text;
+      saveTasks();
     });
 
   // append span and p element to parent li
