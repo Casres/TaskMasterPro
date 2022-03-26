@@ -29,6 +29,14 @@ var createTask = function(taskText, taskDate, taskList) {
 
       task[status][index].text = text;
       saveTasks();
+
+      // recreate p element
+      var taskP = $("<p>")
+        .addClass("m-1")
+        .text(text);
+
+      // replace text area with p element
+      $(this).replaceWith(taskP);
     });
 
   // append span and p element to parent li
