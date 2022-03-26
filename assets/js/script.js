@@ -42,11 +42,19 @@ var loadTasks = function() {
 };
 
 var saveTasks = function() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+
 };
 
+
 $(".list-group").on("click", "p", function() {
-  console.log(this);
+  var text = $(this)
+  .text()
+  .trim();
+  
+  var textInput = $("<textarea>")
+  .addClass("form-control")
+  .val(text);
+  $(this).replaceWith(textInput);
 });
 
 
