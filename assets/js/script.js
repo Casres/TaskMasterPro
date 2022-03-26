@@ -55,6 +55,7 @@ $(".list-group").on("click", "p", function() {
   .addClass("form-control")
   .val(text);
   $(this).replaceWith(textInput);
+  textInput.trigger("focus");
 });
 
 
