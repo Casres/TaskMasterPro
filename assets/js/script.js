@@ -17,7 +17,7 @@ var createTask = function(taskText, taskDate, taskList) {
   // append to ul list on the page
   $("#list-" + taskList).append(taskLi);
 };
-
+ 
 var loadTasks = function() {
   tasks = JSON.parse(localStorage.getItem("tasks"));
 
