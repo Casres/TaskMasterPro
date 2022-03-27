@@ -2,6 +2,11 @@ ul.list-group {
   min-height: 130px;
 }
 
-.border-purple {
-  border-color: 1px solid #b300b3;
+/* I deleted the border-bottom in the h2 element 
+for the word "Done" giving it a css */
+.card-header {
+  border-bottom: 4px solid rgb(225 0 255);
+  box-shadow: 3rem;
 }
+/* the 4px is over riding the other px's for the card headers 
+and solid is just there keeping all of the lines solid under the headers*/
